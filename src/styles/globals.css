@@ -76,3 +76,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   /* display: none; */
 }
 
+
+.custom-shadow{
+  box-shadow: 5px 3px 1px 8px #98b1ae;
+}
+
+@media(max-width: 768px) {
+ .custom-shadow{
+  box-shadow: none;
+}
+}

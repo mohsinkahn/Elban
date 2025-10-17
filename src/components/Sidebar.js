@@ -231,9 +231,9 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
     return (
         <aside
-            className={`fixed p-[10px]  top-[80px] lg:top-[93px] lg:left-[15px] left-[0px] h-full lg:max-h-[calc(100vh-100px)]    lg:overflow-y-auto   md:w-[111px] w-64 bg-[#355E5B] text-white flex flex-col transform transition-transform duration-300
-            ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 z-30 lg:z-0`} 
-            style={{ borderTopLeftRadius: "12px",boxShadow:"-3px -3px 1px 0px #98b1ae",paddingRight:"18px" }}
+            className={`fixed p-[10px] custom-shadow  top-[80px] lg:top-[93px] lg:left-[15px] left-[0px] h-full lg:max-h-[calc(100vh-100px)]    lg:overflow-y-auto   md:w-[111px] w-64 bg-[#355E5B] text-white flex flex-col transform transition-transform duration-300
+            ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 z-[30] lg:z-0 `} 
+            style={{ borderTopLeftRadius: "12px",paddingRight:"18px" }}
         >
             {/* Mobile close button */}
             <div className="flex items-center justify-between md:justify-center text-lg mt-[10px] pr-[10px] md:mt-0 md:pr-0">

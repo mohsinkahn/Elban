@@ -23,6 +23,11 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
+      boxShadow: {
+        'custom-light': '5px 3px 1px 8px #98b1ae',
+        'custom-dark': '6px 6px 15px rgba(0, 0, 0, 0.3)',
+        
+      },
     },
   },
   plugins: [],

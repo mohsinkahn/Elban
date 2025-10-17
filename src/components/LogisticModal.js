@@ -63,7 +63,7 @@ const LogisticModal = ({ isOpen, onClose }) => {
                                     {/* Company Information */}
                                     <div className="overflow-auto max-h-[calc(100vh-310px)] p-1">
                                         <section>
-                                            <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                                            <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                                                 Company Information
                                             </h2>
                                             <div className="grid md:grid-cols-4 grid-cols-1 gap-4">
@@ -268,7 +268,7 @@ const LogisticModal = ({ isOpen, onClose }) => {
 
                                         {/* Commercial and Financial Data */}
                                         <section className="mt-5">
-                                            <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
+                                            <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                                                 Services and Capabilities
                                             </h2>
                                             <div className="grid grid-cols-1 gap-4">
@@ -427,7 +427,7 @@ const LogisticModal = ({ isOpen, onClose }) => {
                                                     </Select>
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Goods Types Handled</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Average Delivery Time</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -488,7 +488,7 @@ const LogisticModal = ({ isOpen, onClose }) => {
 
 
                                         <section className="mt-5">
-                                            <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                                            <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                                                 Commercial Terms
                                             </h2>
                                             <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
@@ -678,7 +678,7 @@ const LogisticModal = ({ isOpen, onClose }) => {
                                         </section>
 
                                         <section className="mt-5">
-                                            <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                                            <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                                                 Performance Assessment
                                             </h2>
                                             <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
@@ -747,31 +747,10 @@ const LogisticModal = ({ isOpen, onClose }) => {
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
                                                     <label htmlFor="" className="text-[#202E2D] ">Flexibility in Negotiation</label>
-                                                    <Select>
-                                                        <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
-                                                            <SelectValue placeholder="Select" />
-                                                        </SelectTrigger>
-                                                        <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
-                                                            <SelectItem
-                                                                value="Form 1"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 1
-                                                            </SelectItem>
-                                                            <SelectItem
-                                                                value="Form 2"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 2
-                                                            </SelectItem>
-                                                            <SelectItem
-                                                                value="Form 2"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 3
-                                                            </SelectItem>
-                                                        </SelectContent>
-                                                    </Select>
+                                                     <input
+                                                        type="text"
+                                                        className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
+                                                    />
                                                 </div>
 
                                                 <div className="form-group flex-col flex gap-2">
