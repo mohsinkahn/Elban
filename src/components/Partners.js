@@ -1,9 +1,32 @@
 "use client";
-import { useState } from "react";
+import { useState,useRef,useEffect } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
+import Link from "next/link";
+import { Eye, Edit, Trash2 } from "lucide-react";
 
 export default function Partners({ activeTab, setActiveTab }) {
     //   const [activeTab, setActiveTab] = useState("potential");
+    const [openIndex, setOpenIndex] = useState(null);
+            const menuRefs = useRef([]);
+          
+            // Close dropdown if clicking outside
+            useEffect(() => {
+              function handleClickOutside(event) {
+                if (
+                  openIndex !== null &&
+                  menuRefs.current[openIndex] &&
+                  !menuRefs.current[openIndex].contains(event.target)
+                ) {
+                  setTimeout(() => setOpenIndex(null), 100); // Delay to allow link clicks
+                }
+              }
+          
+              document.addEventListener("mousedown", handleClickOutside);
+              return () => {
+                document.removeEventListener("mousedown", handleClickOutside);
+              };
+            }, [openIndex]);
+
 
     const suppliers = Array(20).fill({
         id: "#547388",
@@ -137,7 +160,83 @@ export default function Partners({ activeTab, setActiveTab }) {
                                             </span>
                                         </td>
                                         <td className="text-center">
-                                            <ActionsMenu />
+                                            <div
+                  className="relative inline-block text-left"
+                  ref={(el) => (menuRefs.current[i] = el)}
+                >
+                  <button
+                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                    className="p-1 rounded hover:bg-gray-200"
+                  >
+                    <svg
+                      width={25}
+                      height={24}
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.5 13C13.0523 13 13.5 12.5523 13.5 12C13.5 11.4477 13.0523 11 12.5 11C11.9477 11 11.5 11.4477 11.5 12C11.5 12.5523 11.9477 13 12.5 13Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.5 6C13.0523 6 13.5 5.55228 13.5 5C13.5 4.44772 13.0523 4 12.5 4C11.9477 4 11.5 4.44772 11.5 5C11.5 5.55228 11.9477 6 12.5 6Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.5 20C13.0523 20 13.5 19.5523 13.5 19C13.5 18.4477 13.0523 18 12.5 18C11.9477 18 11.5 18.4477 11.5 19C11.5 19.5523 11.9477 20 12.5 20Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+
+                  {openIndex === i && (
+                    <div className="absolute right-[25px] mt-2 w-32 bg-white border rounded border-[#EAECF0] z-20">
+                      {/* ✅ "View" link works now */}
+                      <Link
+                        href={`/logistic_partner_view?id=${encodeURIComponent(s.id)}`}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        <Eye className="w-4 h-4 mr-2" />
+                        View
+                      </Link>
+
+                      <Link href="#"
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => {
+                          console.log("Edit supplier", s.id);
+                          setOpenIndex(null);
+                        }}
+                      >
+                        <Edit className="w-4 h-4 mr-2" />
+                        Edit
+                      </Link>
+
+                      <button
+                        className="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                        onClick={() => {
+                          console.log("Delete supplier", s.id);
+                          setOpenIndex(null);
+                        }}
+                      >
+                        <Trash2 className="w-4 h-4 mr-2" />
+                        Delete
+                      </button>
+                    </div>
+                  )}
+                                             </div>
                                         </td>
                                     </tr>
                                 ))}
@@ -213,7 +312,83 @@ export default function Partners({ activeTab, setActiveTab }) {
                                         </span>
                                     </td>
                                     <td className="text-center">
-                                        <ActionsMenu />
+                                         <div
+                  className="relative inline-block text-left"
+                  ref={(el) => (menuRefs.current[i] = el)}
+                >
+                  <button
+                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                    className="p-1 rounded hover:bg-gray-200"
+                  >
+                    <svg
+                      width={25}
+                      height={24}
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.5 13C13.0523 13 13.5 12.5523 13.5 12C13.5 11.4477 13.0523 11 12.5 11C11.9477 11 11.5 11.4477 11.5 12C11.5 12.5523 11.9477 13 12.5 13Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.5 6C13.0523 6 13.5 5.55228 13.5 5C13.5 4.44772 13.0523 4 12.5 4C11.9477 4 11.5 4.44772 11.5 5C11.5 5.55228 11.9477 6 12.5 6Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.5 20C13.0523 20 13.5 19.5523 13.5 19C13.5 18.4477 13.0523 18 12.5 18C11.9477 18 11.5 18.4477 11.5 19C11.5 19.5523 11.9477 20 12.5 20Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+
+                  {openIndex === i && (
+                    <div className="absolute right-[25px] mt-2 w-32 bg-white border rounded border-[#EAECF0] z-20">
+                      {/* ✅ "View" link works now */}
+                      <Link
+                        href={`/custom_comp_view?id=${encodeURIComponent(s.id)}`}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        <Eye className="w-4 h-4 mr-2" />
+                        View
+                      </Link>
+
+                      <Link href="#"
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => {
+                          console.log("Edit supplier", s.id);
+                          setOpenIndex(null);
+                        }}
+                      >
+                        <Edit className="w-4 h-4 mr-2" />
+                        Edit
+                      </Link>
+
+                      <button
+                        className="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                        onClick={() => {
+                          console.log("Delete supplier", s.id);
+                          setOpenIndex(null);
+                        }}
+                      >
+                        <Trash2 className="w-4 h-4 mr-2" />
+                        Delete
+                      </button>
+                    </div>
+                  )}
+                                             </div>
                                     </td>
                                 </tr>
                             ))}
@@ -286,7 +461,83 @@ export default function Partners({ activeTab, setActiveTab }) {
                                         </span>
                                     </td>
                                     <td className="text-center">
-                                        <ActionsMenu />
+                                         <div
+                  className="relative inline-block text-left"
+                  ref={(el) => (menuRefs.current[i] = el)}
+                >
+                  <button
+                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                    className="p-1 rounded hover:bg-gray-200"
+                  >
+                    <svg
+                      width={25}
+                      height={24}
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.5 13C13.0523 13 13.5 12.5523 13.5 12C13.5 11.4477 13.0523 11 12.5 11C11.9477 11 11.5 11.4477 11.5 12C11.5 12.5523 11.9477 13 12.5 13Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.5 6C13.0523 6 13.5 5.55228 13.5 5C13.5 4.44772 13.0523 4 12.5 4C11.9477 4 11.5 4.44772 11.5 5C11.5 5.55228 11.9477 6 12.5 6Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12.5 20C13.0523 20 13.5 19.5523 13.5 19C13.5 18.4477 13.0523 18 12.5 18C11.9477 18 11.5 18.4477 11.5 19C11.5 19.5523 11.9477 20 12.5 20Z"
+                        stroke="#202E2D"
+                        strokeOpacity="0.6"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+
+                  {openIndex === i && (
+                    <div className="absolute right-[25px] mt-2 w-32 bg-white border rounded border-[#EAECF0] z-20">
+                      {/* ✅ "View" link works now */}
+                      <Link
+                        href={`/service_provider_view?id=${encodeURIComponent(s.id)}`}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        <Eye className="w-4 h-4 mr-2" />
+                        View
+                      </Link>
+
+                      <Link href="#"
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => {
+                          console.log("Edit supplier", s.id);
+                          setOpenIndex(null);
+                        }}
+                      >
+                        <Edit className="w-4 h-4 mr-2" />
+                        Edit
+                      </Link>
+
+                      <button
+                        className="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                        onClick={() => {
+                          console.log("Delete supplier", s.id);
+                          setOpenIndex(null);
+                        }}
+                      >
+                        <Trash2 className="w-4 h-4 mr-2" />
+                        Delete
+                      </button>
+                    </div>
+                  )}
+                                             </div>
                                     </td>
                                 </tr>
                             ))}

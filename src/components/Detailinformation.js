@@ -9,7 +9,7 @@ export default function Detailinformation() {
             {/* Company Information */}
             <div className="overflow-auto max-h-[calc(100vh-469px)] p-1">
                 <section>
-                    <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                    <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                         Company Information
                     </h2>
                     <div className="grid md:grid-cols-4 grid-cols-1 gap-4">
@@ -105,7 +105,7 @@ export default function Detailinformation() {
 
                 {/* Commercial and Financial Data */}
                 <section className="mt-5">
-                    <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                    <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                         Commercial and Financial Data
                     </h2>
 
@@ -137,7 +137,7 @@ export default function Detailinformation() {
 
 
                 <section className="mt-5">
-                    <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                    <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                         Cooperation History
                     </h2>
                     <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
@@ -166,7 +166,7 @@ export default function Detailinformation() {
                 </section>
 
                 <section className="mt-5">
-                    <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                    <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                         Cooperation Details
                     </h2>
                     <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
@@ -362,7 +362,7 @@ export default function Detailinformation() {
                 </section>
 
                 <section className="mt-5">
-                    <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                    <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                         Operational Data
                     </h2>
                     <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
@@ -582,7 +582,7 @@ export default function Detailinformation() {
                     </div>
                 </section>
                 <section className="mt-5">
-                    <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                    <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] text-[18px]">
                         Cooperation Assessment
                     </h2>
                     <div className="grid md:grid-cols-3 grid-cols-1 gap-4">

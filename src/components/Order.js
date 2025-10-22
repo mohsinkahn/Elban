@@ -164,7 +164,7 @@ export default function Order() {
                                         <div className="absolute right-[25px] mt-2 w-32 bg-white border rounded border-[#EAECF0] z-20">
                                             {/* ✅ "View" link works now */}
                                             <Link
-                                                href="#"
+                                                href={`/order_view?id=${encodeURIComponent(s.id)}`}
                                                 className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                             >
                                                 <Eye className="w-4 h-4 mr-2" />

@@ -3,6 +3,15 @@ import { useState } from 'react';
 import Detailinformation from './Detailinformation';
 import SupplierLogs from './SupplierLogs';
 import Product from './Product';
+import Supplier_quotes from './supplier_quotes';
+import Supplier_event from './supplier_event';
+import Supplier_report from './supplier_report';
+import Supplier_order from './supplier_order';
+import Supplier_complaints from './supplier_complaints';
+import Supplier_attachments from './supplier_attachments';
+import Supplier_financial from './supplier_financial';
+import Supplier_notes_summary from './supplier_notes_summary';
+
 import AddNewProductModal from "./AddNewProductModal";
 const tabList = [
     { id: 1, label: "Detail Information" },
@@ -58,60 +67,173 @@ export default function Tabs() {
                         <Detailinformation />
                     </>
                 }
-                {activeTab === 2 && <p>This is the content for <strong>Quotes</strong>.</p>}
-                {activeTab === 3 && <p>This is the content for <strong>Notes & Summaries</strong>.</p>}
-                {activeTab === 4 && <p>This is the content for <strong>Orders</strong>.</p>}
+                {activeTab === 2 &&
+                    <>
+                        <div>
+                            <div className="flex w-full justify-between items-center mb-2">
+                                <div className="product">
+                                    <h1 className='text-[#202E2D] text-[20px] font-medium'>Quotes</h1>
+                                </div>
+
+                            </div>
+
+                            <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
+                            <Supplier_quotes />
+                        </div>
+                    </>
+                }
+                {activeTab === 3 && 
+                <div>
+                            <div className="flex w-full justify-between items-center mb-2">
+                                <div className="product">
+                                    <h2 className='text-[#202E2D] text-[20px] font-medium'>Notes & Summary</h2>
+                                </div>
+
+                            </div>
+
+                            <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
+                            <Supplier_notes_summary />
+                        </div>
+                
+                }
+                {activeTab === 4 &&
+                    <>
+                        <div>
+                            <div className="flex w-full justify-between items-center mb-2">
+                                <div className="product">
+                                    <h1 className='text-[#202E2D] text-[20px] font-medium'>Orders</h1>
+                                </div>
+
+                            </div>
+
+                            <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
+                            <Supplier_order />
+                        </div>
+                    </>
+
+                }
                 {activeTab === 5 &&
                     <>
                         <div>
-                             <div className="flex w-full justify-between items-center mb-2">
+                            <div className="flex w-full justify-between items-center mb-2">
                                 <div className="product">
-                                <h1 className='text-[#202E2D] text-[24px]'>Products</h1>
+                                    <h2 className='text-[#202E2D] text-[20px] font-medium'>Products</h2>
+                                </div>
+                                <div className="button">
+                                    <button
+                                        className="btn btn-primary"
+                                        onClick={() => setShowModal(true)}
+                                    >
+                                        <div className="flex items-center gap-2">
+                                            <svg
+                                                width={14}
+                                                height={14}
+                                                viewBox="0 0 14 14"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M6.99984 1.16667V12.8333M1.1665 7H12.8332"
+                                                    stroke="white"
+                                                    strokeWidth="1.67"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </div>
                             </div>
-                            <div className="button">
-                                <button
-                                    className="btn btn-primary"
-                                    onClick={() => setShowModal(true)}
-                                >
-                                    <div className="flex items-center gap-2">
-                                        <svg
-                                            width={14}
-                                            height={14}
-                                            viewBox="0 0 14 14"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M6.99984 1.16667V12.8333M1.1665 7H12.8332"
-                                                stroke="white"
-                                                strokeWidth="1.67"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
-                             </div>
                             <AddNewProductModal
                                 isOpen={showModal}
                                 onClose={() => setShowModal(false)}
                             />
-                            <hr className='mb-4 mt-2' />
+                            <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
                             <Product />
                         </div>
                     </>
                 }
-                {activeTab === 6 && <p>This is the content for <strong>Events</strong>.</p>}
-                {activeTab === 7 && <p>This is the content for <strong>Financials</strong>.</p>}
+                {activeTab === 6 &&
+
+                    <>
+                        <div>
+                            <div className="flex w-full justify-between items-center mb-2">
+                                <div className="product">
+                                    <h2 className='text-[#202E2D] text-[20px] font-medium'>Events</h2>
+                                </div>
+
+                            </div>
+
+                            <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
+                            <Supplier_event />
+                        </div>
+                    </>
+
+                }
+                {activeTab === 7 &&
+                    <>
+                        <div>
+                            <div className="flex w-full justify-between items-center mb-2">
+                                <div className="product">
+                                    <h2 className='text-[#202E2D] text-[20px] font-medium'>Financials</h2>
+                                </div>
+
+                            </div>
+
+                            <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
+                            <Supplier_financial />
+                        </div>
+                    </>
+
+                }
                 {activeTab === 8 &&
                     <>
                         <SupplierLogs />
                     </>
                 }
-                {activeTab === 9 && <p>This is the content for <strong>Complaints</strong>.</p>}
-                {activeTab === 10 && <p>This is the content for <strong>Attachments</strong>.</p>}
-                {activeTab === 11 && <p>This is the content for <strong>Reports</strong>.</p>}
+                {activeTab === 9 &&
+
+                    <>
+                        <div>
+                            <div className="flex w-full justify-between items-center mb-2">
+                                <div className="product">
+                                    <h2 className='text-[#202E2D] text-[20px] font-medium'>Complaints</h2>
+                                </div>
+
+                            </div>
+
+                            <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
+                            <Supplier_complaints />
+                        </div>
+                    </>
+                }
+                {activeTab === 10 &&
+                    <>
+
+
+
+
+                        <Supplier_attachments />
+
+                    </>
+
+
+                }
+                {activeTab === 11 &&
+                    <>
+                        <div>
+                            <div className="flex w-full justify-between items-center mb-2">
+                                <div className="product">
+                                    <h1 className='text-[#202E2D] text-[20px] font-medium'>Reports</h1>
+                                </div>
+
+                            </div>
+
+                            <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
+                            <Supplier_report />
+                        </div>
+                    </>
+                }
             </div>
         </div>
     );

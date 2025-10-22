@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import MultiSelectTags from "../components/MultiSelectTags";
 import PaymentTermsSelectTag from "../components/PaymentTermsSelectTag";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import FileUploader from './FileUploader';
+
 
 const ServiceModal = ({ isOpen, onClose }) => {
     const handleSubmit = (e) => {
@@ -59,7 +61,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                     {/* Company Information */}
                                     <div className="overflow-auto max-h-[calc(100vh-310px)] p-1">
                                         <section>
-                                            <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                                            <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                                                 Company Information
                                             </h2>
                                             <div className="grid md:grid-cols-4 grid-cols-1 gap-4">
@@ -149,12 +151,71 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                     </Select>
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
+                                                    <label htmlFor="" className="text-[#202E2D] ">Company Region  </label>
+                                                    <Select>
+                                                        <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
+                                                            <SelectValue placeholder="Select" />
+                                                        </SelectTrigger>
+                                                        <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
+                                                            <SelectItem
+                                                                value="Form 1"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 1
+                                                            </SelectItem>
+                                                            <SelectItem
+                                                                value="Form 2"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 2
+                                                            </SelectItem>
+                                                            <SelectItem
+                                                                value="Form 2"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 3
+                                                            </SelectItem>
+                                                        </SelectContent>
+                                                    </Select>
+                                                </div>
+                                                <div className="form-group flex-col flex gap-2">
+                                                    <label htmlFor="" className="text-[#202E2D] ">Provider Type</label>
+                                                    <Select>
+                                                        <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
+                                                            <SelectValue placeholder="Select" />
+                                                        </SelectTrigger>
+                                                        <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
+                                                            <SelectItem
+                                                                value="Form 1"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 1
+                                                            </SelectItem>
+                                                            <SelectItem
+                                                                value="Form 2"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 2
+                                                            </SelectItem>
+                                                            <SelectItem
+                                                                value="Form 2"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 3
+                                                            </SelectItem>
+                                                        </SelectContent>
+                                                    </Select>
+                                                </div>
+                                                <div className="form-group flex-col flex gap-2">
                                                     <label htmlFor="" className="text-[#202E2D] ">Country</label>
                                                     <input
                                                         type="text"
                                                         className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
                                                     />
                                                 </div>
+                                                
+                                            </div>
+                                            <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mt-4">
                                                 <div className="form-group flex-col flex gap-2">
                                                     <label htmlFor="" className="text-[#202E2D] ">City</label>
                                                     <input
@@ -164,15 +225,6 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
                                                     <label htmlFor="" className="text-[#202E2D] ">Postal Code</label>
-                                                    <input
-                                                        type="text"
-                                                        className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
-                                                <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Street</label>
                                                     <input
                                                         type="text"
                                                         className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
@@ -190,23 +242,23 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                         </section>
                                         {/* Commercial and Financial Data */}
                                         <section className="mt-5">
-                                            <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
-                                                Services and Capabilities
+                                            <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
+                                                 Scope of Services
                                             </h2>
                                             <div className="grid grid-cols-1 gap-4">
 
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Transport Licenses</label>
-                                                    <PaymentTermsSelectTag />
+                                                    <label htmlFor="" className="text-[#202E2D] ">Industry Certifications</label>
+                                                    <FileUploader/>
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Quality & Safety Certifications</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Sector Specialization</label>
                                                     <MultiSelectTags />
                                                 </div>
                                             </div>
                                             <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Transport Services Offered</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Service Type</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -234,7 +286,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                     </Select>
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Covered Transport Routes</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Service Delivery Method</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -262,7 +314,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                     </Select>
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Transport Methods Supported</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Geographic Coverage</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -290,7 +342,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                     </Select>
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Maximum Load Capacity</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Cooperation Model</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -318,9 +370,9 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                     </Select>
                                                 </div>
                                             </div>
-                                            <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mt-4">
+                                            <div className="grid md:grid-cols-1 grid-cols-1 gap-4 mt-4">
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Goods Types Handled</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Availability for Urgent Cases</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -347,74 +399,19 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                         </SelectContent>
                                                     </Select>
                                                 </div>
-                                                <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Goods Types Handled</label>
-                                                    <Select>
-                                                        <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
-                                                            <SelectValue placeholder="Select" />
-                                                        </SelectTrigger>
-                                                        <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
-                                                            <SelectItem
-                                                                value="Form 1"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 1
-                                                            </SelectItem>
-                                                            <SelectItem
-                                                                value="Form 2"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 2
-                                                            </SelectItem>
-                                                            <SelectItem
-                                                                value="Form 2"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 3
-                                                            </SelectItem>
-                                                        </SelectContent>
-                                                    </Select>
-                                                </div>
-                                                <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Online Shipment Tracking Available</label>
-                                                    <Select>
-                                                        <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
-                                                            <SelectValue placeholder="Select" />
-                                                        </SelectTrigger>
-                                                        <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
-                                                            <SelectItem
-                                                                value="Form 1"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 1
-                                                            </SelectItem>
-                                                            <SelectItem
-                                                                value="Form 2"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 2
-                                                            </SelectItem>
-                                                            <SelectItem
-                                                                value="Form 2"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 3
-                                                            </SelectItem>
-                                                        </SelectContent>
-                                                    </Select>
-                                                </div>
+                                                
 
                                             </div>
                                         </section>
 
 
                                         <section className="mt-5">
-                                            <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                                            <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                                                 Commercial Terms
                                             </h2>
                                             <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Service Pricing</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Pricing Model</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -500,35 +497,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                             </div>
                                             <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mt-4">
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Min/Max Transport Order Size</label>
-                                                    <Select>
-                                                        <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
-                                                            <SelectValue placeholder="Select" />
-                                                        </SelectTrigger>
-                                                        <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
-                                                            <SelectItem
-                                                                value="Form 1"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 1
-                                                            </SelectItem>
-                                                            <SelectItem
-                                                                value="Form 2"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 2
-                                                            </SelectItem>
-                                                            <SelectItem
-                                                                value="Form 2"
-                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
-                                                            >
-                                                                Form 3
-                                                            </SelectItem>
-                                                        </SelectContent>
-                                                    </Select>
-                                                </div>
-                                                <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Discounts & Loyalty Programs</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Service Pricing Description</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -583,35 +552,53 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                         </SelectContent>
                                                     </Select>
                                                 </div>
-                                            </div>
-
-
-                                            <div className="grid md:grid-cols-1 grid-cols-1 gap-4 mt-4">
                                                 <div className="form-group flex-col flex gap-2">
                                                     <label htmlFor="" className="text-[#202E2D] ">Responsible Person</label>
-                                                    <input
-                                                        type="text"
-                                                        className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
-                                                    />
+                                                    <Select>
+                                                        <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
+                                                            <SelectValue placeholder="Select" />
+                                                        </SelectTrigger>
+                                                        <SelectContent className="rounded-lg border border-[#F0F0F0] shadow-sm font-poppins bg-[#fff] w-full">
+                                                            <SelectItem
+                                                                value="Form 1"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 1
+                                                            </SelectItem>
+                                                            <SelectItem
+                                                                value="Form 2"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 2
+                                                            </SelectItem>
+                                                            <SelectItem
+                                                                value="Form 2"
+                                                                className="text-sm font-normal py-2 px-3 pl-8 relative hover:bg-[#355E5B] hover:text-[#fff] cursor-pointer"
+                                                            >
+                                                                Form 3
+                                                            </SelectItem>
+                                                        </SelectContent>
+                                                    </Select>
                                                 </div>
-
                                             </div>
+
+
                                         </section>
 
                                         <section className="mt-5">
-                                            <h2 className="font-semibold mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D] font-[400] text-[18px]">
+                                            <h2 className="font-medium mb-4 border-b border-[#355E5B] pb-3 text-[#202E2D]  text-[18px]">
                                                 Performance Assessment
                                             </h2>
                                             <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Fleet / Warehouse Condition</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Quality of Services</label>
                                                     <input
                                                         type="text"
                                                         className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm"
                                                     />
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Delivery Punctuality</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Timeliness of Services</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -639,7 +626,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                     </Select>
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Customer Service & Communication</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Problem Solving & Customs Expertise</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -667,7 +654,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
                                                     </Select>
                                                 </div>
                                                 <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Flexibility in Negotiation</label>
+                                                    <label htmlFor="" className="text-[#202E2D] ">Fit for Business Needs</label>
                                                     <Select>
                                                         <SelectTrigger className="shadow-sm w-full h-[46px] focus:outline-none focus:ring-1 focus:ring-[#355E5B] border border-[#D0D5DD] px-2 py-3 rounded-[8px] font-poppins">
                                                             <SelectValue placeholder="Select" />
@@ -754,18 +741,7 @@ const ServiceModal = ({ isOpen, onClose }) => {
 
                                             </div>
 
-                                            <div className="grid md:grid-cols-1 grid-cols-1 gap-4 mt-4">
-                                                <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">Risks Identified</label>
-                                                    <MultiSelectTags />
-                                                </div>
-                                            </div>
-                                            <div className="grid grid-cols-1 gap-4 mt-4">
-                                                <div className="form-group flex-col flex gap-2">
-                                                    <label htmlFor="" className="text-[#202E2D] ">General Notes</label>
-                                                    <textarea name="" id="" className="border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#355E5B] shadow-sm resize-none"></textarea>
-                                                </div>
-                                            </div>
+                                            
                                         </section>
                                     </div>
                                     {/* Buttons */}

@@ -130,12 +130,12 @@ const logs = [
   },
 ];
 
-export default function SupplierLogs() {
+export default function  SupplierLogs() {
   return (
     <>
-      <h2 className="text-lg font-semibold text-gray-900">Supplier Logs</h2>
-      <hr className="mt-3 mb-3" />
-      <div className="overflow-auto max-h-[calc(100vh-469px)] p-4">
+      <h2 className="text-lg font-medium text-gray-900">Supplier Logs</h2>
+      <hr className='mb-4 mt-2 bg-[#355E5B7A] text-[#355E5B7A] ' />
+      <div className="overflow-auto max-h-[calc(100vh-534px)] p-4">
 
         <p className="text-sm text-gray-500 mb-6">Aug 20, 2022 – Today</p>
 

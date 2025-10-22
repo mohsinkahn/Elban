@@ -43,7 +43,7 @@ export default function Event() {
         assigned_pm: "John Doe",
         start_date: "12/03/2023",
         end_date: "12/03/2023",
-        // status: "Completed",
+        status: "Attended",
         
         
     });
@@ -84,6 +84,7 @@ export default function Event() {
                             "Assigned PM",
                             "Start Date",
                             "End Date",
+                            "Status",
                             "",
                         ].map((header, idx) => (
                             <th
@@ -119,7 +120,11 @@ export default function Event() {
                              <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.assigned_pm}</td>
                              <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.start_date}</td>
                              <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.end_date}</td>
-                            
+                             <td className="px-6 py-3">
+                      <span className="bg-[#EAB9193D] text-[#EAB919] px-2 py-1 rounded text-xs">
+                        {s.status}
+                      </span>
+                    </td>
                             
                             <td className="text-center">
                                 <div
