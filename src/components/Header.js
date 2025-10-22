@@ -93,7 +93,7 @@ export default function Header({ setIsOpen }) {
           {/* User Icon */}
           {/* <User className="w-8 h-8 rounded-full bg-gray-200 p-1 cursor-pointer" /> */}
           <div>
-             <Image src="/avatar.png" width={40} height={40}   className=" rounded-2xl" />
+             <Image src="/avatar.png" alt="avatar" width={40} height={40}   className=" rounded-2xl" />
           </div>
           
         

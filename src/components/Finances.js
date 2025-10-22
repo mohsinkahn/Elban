@@ -1,35 +1,35 @@
 "use client";
-import { useState, useMemo,useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 import Link from "next/link";
 import { Eye, Edit, Trash2 } from "lucide-react";
-
+import Image from "next/image";
 
 
 
 export default function Finances({ activeTab, setActiveTab }) {
 
-   const [openIndex, setOpenIndex] = useState(null);
-    const menuRefs = useRef([]);
-  
-    // Close dropdown if clicking outside
-    useEffect(() => {
-      function handleClickOutside(event) {
-        if (
-          openIndex !== null &&
-          menuRefs.current[openIndex] &&
-          !menuRefs.current[openIndex].contains(event.target)
-        ) {
-          setTimeout(() => setOpenIndex(null), 100); // Delay to allow link clicks
-        }
+  const [openIndex, setOpenIndex] = useState(null);
+  const menuRefs = useRef([]);
+
+  // Close dropdown if clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        openIndex !== null &&
+        menuRefs.current[openIndex] &&
+        !menuRefs.current[openIndex].contains(event.target)
+      ) {
+        setTimeout(() => setOpenIndex(null), 100); // Delay to allow link clicks
       }
-  
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [openIndex]);
-  
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openIndex]);
+
   const [suppliers] = useState(
     Array(20).fill({
       id: "#547388",
@@ -86,7 +86,7 @@ export default function Finances({ activeTab, setActiveTab }) {
             : "bg-[#FFFFFF] shadow-sm text-black hover:text-[355E5B]"
             }`}
         >
-         Clients
+          Clients
         </button>
         <button
           onClick={() => setActiveTab("active2")}
@@ -95,7 +95,7 @@ export default function Finances({ activeTab, setActiveTab }) {
             : "bg-[#FFFFFF] shadow-sm text-black hover:text-[355E5B]"
             }`}
         >
-         Logistic Partners
+          Logistic Partners
         </button>
         <button
           onClick={() => setActiveTab("active3")}
@@ -104,7 +104,7 @@ export default function Finances({ activeTab, setActiveTab }) {
             : "bg-[#FFFFFF] shadow-sm text-black hover:text-[355E5B]"
             }`}
         >
-         Custom & Comp.
+          Custom & Comp.
         </button>
         <button
           onClick={() => setActiveTab("active4")}
@@ -113,7 +113,7 @@ export default function Finances({ activeTab, setActiveTab }) {
             : "bg-[#FFFFFF] shadow-sm text-black hover:text-[355E5B]"
             }`}
         >
-         Service Provider
+          Service Provider
         </button>
         {/* Add more tabs as needed */}
       </div>
@@ -167,7 +167,7 @@ export default function Finances({ activeTab, setActiveTab }) {
                         onChange={() => toggleRow(i)}
                       />
                     </td>
-                <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.id}</td>
+                    <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.id}</td>
                     <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.order_id}</td>
                     <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.total_amount}</td>
                     <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.payment_method}</td>
@@ -180,95 +180,102 @@ export default function Finances({ activeTab, setActiveTab }) {
                       </span>
                     </td>
                     <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.notes}</td>
-                    
+
                     <td className="text-center">
                       {/* <ActionsMenu /> */}
                       <div
-                  className="relative inline-block text-left"
-                  ref={(el) => (menuRefs.current[i] = el)}
-                >
-                  <button
-                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                    className="p-1 rounded hover:bg-gray-200"
-                  >
-                    <svg
-                      width={25}
-                      height={24}
-                      viewBox="0 0 25 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12.5 13C13.0523 13 13.5 12.5523 13.5 12C13.5 11.4477 13.0523 11 12.5 11C11.9477 11 11.5 11.4477 11.5 12C11.5 12.5523 11.9477 13 12.5 13Z"
-                        stroke="#202E2D"
-                        strokeOpacity="0.6"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.5 6C13.0523 6 13.5 5.55228 13.5 5C13.5 4.44772 13.0523 4 12.5 4C11.9477 4 11.5 4.44772 11.5 5C11.5 5.55228 11.9477 6 12.5 6Z"
-                        stroke="#202E2D"
-                        strokeOpacity="0.6"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12.5 20C13.0523 20 13.5 19.5523 13.5 19C13.5 18.4477 13.0523 18 12.5 18C11.9477 18 11.5 18.4477 11.5 19C11.5 19.5523 11.9477 20 12.5 20Z"
-                        stroke="#202E2D"
-                        strokeOpacity="0.6"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-
-                  {openIndex === i && (
-                    <div className="absolute right-[25px] mt-2 w-32 bg-white border rounded border-[#EAECF0] z-20">
-                      {/* ✅ "View" link works now */}
-                      <Link
-                        href="#"
-                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="relative inline-block text-left"
+                        ref={(el) => (menuRefs.current[i] = el)}
                       >
-                        <Eye className="w-4 h-4 mr-2" />
-                        View
-                      </Link>
+                        <button
+                          onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                          className="p-1 rounded hover:bg-gray-200"
+                        >
+                          <svg
+                            width={25}
+                            height={24}
+                            viewBox="0 0 25 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.5 13C13.0523 13 13.5 12.5523 13.5 12C13.5 11.4477 13.0523 11 12.5 11C11.9477 11 11.5 11.4477 11.5 12C11.5 12.5523 11.9477 13 12.5 13Z"
+                              stroke="#202E2D"
+                              strokeOpacity="0.6"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M12.5 6C13.0523 6 13.5 5.55228 13.5 5C13.5 4.44772 13.0523 4 12.5 4C11.9477 4 11.5 4.44772 11.5 5C11.5 5.55228 11.9477 6 12.5 6Z"
+                              stroke="#202E2D"
+                              strokeOpacity="0.6"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M12.5 20C13.0523 20 13.5 19.5523 13.5 19C13.5 18.4477 13.0523 18 12.5 18C11.9477 18 11.5 18.4477 11.5 19C11.5 19.5523 11.9477 20 12.5 20Z"
+                              stroke="#202E2D"
+                              strokeOpacity="0.6"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
 
-                      <Link href="#"
-                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        onClick={() => {
-                          console.log("Edit supplier", s.id);
-                          setOpenIndex(null);
-                        }}
-                      >
-                        <Edit className="w-4 h-4 mr-2" />
-                        Edit
-                      </Link>
+                        {openIndex === i && (
+                          <div className="absolute right-[25px] mt-2 w-32 bg-white border rounded border-[#EAECF0] z-20">
+                            {/* ✅ "View" link works now */}
+                            <Link
+                              href="#"
+                              className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            >
+                              <Eye className="w-4 h-4 mr-2" />
+                              View
+                            </Link>
 
-                      <button
-                        className="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-                        onClick={() => {
-                          console.log("Delete supplier", s.id);
-                          setOpenIndex(null);
-                        }}
-                      >
-                        <Trash2 className="w-4 h-4 mr-2" />
-                        Delete
-                      </button>
-                    </div>
-                  )}
-                </div>
+                            <Link href="#"
+                              className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              onClick={() => {
+                                console.log("Edit supplier", s.id);
+                                setOpenIndex(null);
+                              }}
+                            >
+                              <Edit className="w-4 h-4 mr-2" />
+                              Edit
+                            </Link>
+
+                            <button
+                              className="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                              onClick={() => {
+                                console.log("Delete supplier", s.id);
+                                setOpenIndex(null);
+                              }}
+                            >
+                              <Trash2 className="w-4 h-4 mr-2" />
+                              Delete
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 ))
               ) : (
                 <tr>
                   <td colSpan="13" className="text-center py-10">
-                    <img
+                    {/* <img
                       src="/no-data.png"
                       alt="No Data"
+                      className="mx-auto mb-4 w-40 h-40 object-contain"
+                    /> */}
+                    <Image
+                      src="/no-data.png"
+                      alt="No Data"
+                      width={40}
+                      height={40}
                       className="mx-auto mb-4 w-40 h-40 object-contain"
                     />
                     <p className="text-gray-500 text-sm">No data available</p>
@@ -350,9 +357,16 @@ export default function Finances({ activeTab, setActiveTab }) {
               ) : (
                 <tr>
                   <td colSpan="13" className="text-center py-10">
-                    <img
+                    {/* <img
                       src="/no-data.png"
                       alt="No Data"
+                      className="mx-auto mb-4 w-40 h-40 object-contain"
+                    /> */}
+                      <Image
+                      src="/no-data.png"
+                      alt="No Data"
+                      width={40}
+                      height={40}
                       className="mx-auto mb-4 w-40 h-40 object-contain"
                     />
                     <p className="text-gray-500 text-sm">No data available</p>
@@ -411,7 +425,7 @@ export default function Finances({ activeTab, setActiveTab }) {
                         onChange={() => toggleRow(i)}
                       />
                     </td>
-                   <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.id}</td>
+                    <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.id}</td>
                     <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.order_id}</td>
                     <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.total_amount}</td>
                     <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.payment_method}</td>
@@ -432,9 +446,16 @@ export default function Finances({ activeTab, setActiveTab }) {
               ) : (
                 <tr>
                   <td colSpan="13" className="text-center py-10">
-                    <img
+                    {/* <img
                       src="/no-data.png"
                       alt="No Data"
+                      className="mx-auto mb-4 w-40 h-40 object-contain"
+                    /> */}
+                      <Image
+                      src="/no-data.png"
+                      alt="No Data"
+                      width={40}
+                      height={40}
                       className="mx-auto mb-4 w-40 h-40 object-contain"
                     />
                     <p className="text-gray-500 text-sm">No data available</p>
@@ -514,9 +535,16 @@ export default function Finances({ activeTab, setActiveTab }) {
               ) : (
                 <tr>
                   <td colSpan="13" className="text-center py-10">
-                    <img
+                    {/* <img
                       src="/no-data.png"
                       alt="No Data"
+                      className="mx-auto mb-4 w-40 h-40 object-contain"
+                    /> */}
+                      <Image
+                      src="/no-data.png"
+                      alt="No Data"
+                      width={40}
+                      height={40}
                       className="mx-auto mb-4 w-40 h-40 object-contain"
                     />
                     <p className="text-gray-500 text-sm">No data available</p>
@@ -540,7 +568,7 @@ export default function Finances({ activeTab, setActiveTab }) {
                   />
                 </th>
                 {[
-                   "Invoice ID",
+                  "Invoice ID",
                   "Order ID",
                   "Total Amount",
                   "Payment Method",
@@ -596,9 +624,16 @@ export default function Finances({ activeTab, setActiveTab }) {
               ) : (
                 <tr>
                   <td colSpan="13" className="text-center py-10">
-                    <img
+                    {/* <img
                       src="/no-data.png"
                       alt="No Data"
+                      className="mx-auto mb-4 w-40 h-40 object-contain"
+                    /> */}
+                      <Image
+                      src="/no-data.png"
+                      alt="No Data"
+                      width={40}
+                      height={40}
                       className="mx-auto mb-4 w-40 h-40 object-contain"
                     />
                     <p className="text-gray-500 text-sm">No data available</p>

@@ -3,6 +3,7 @@ import { useState, useMemo,useRef, useEffect } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 import Link from "next/link";
 import { Eye, Edit, Trash2 } from "lucide-react";
+import Image from "next/image";
 
 
 
@@ -244,10 +245,17 @@ export default function Client({ activeTab, setActiveTab }) {
               ) : (
                 <tr>
                   <td colSpan="13" className="text-center py-10">
-                    <img
+                    {/* <img
                       src="/no-data.png"
                       alt="No Data"
                       className="mx-auto mb-4 w-40 h-40 object-contain"
+                    /> */}
+                    <Image
+                    src="/no-data.png"
+                      alt="No Data"
+                    width={40}
+                    height={40}
+                    className="mx-auto mb-4 w-40 h-40 object-contain"
                     />
                     <p className="text-gray-500 text-sm">No data available</p>
                   </td>
@@ -408,10 +416,17 @@ export default function Client({ activeTab, setActiveTab }) {
               ) : (
                 <tr>
                   <td colSpan="13" className="text-center py-10">
-                    <img
+                    {/* <img
                       src="/no-data.png"
                       alt="No Data"
                       className="mx-auto mb-4 w-40 h-40 object-contain"
+                    /> */}
+                    <Image
+                    src="/no-data.png"
+                      alt="No Data"
+                    width={40}
+                    height={40}
+                    className="mx-auto mb-4 w-40 h-40 object-contain"
                     />
                     <p className="text-gray-500 text-sm">No data available</p>
                   </td>

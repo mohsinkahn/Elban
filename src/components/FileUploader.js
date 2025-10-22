@@ -3,6 +3,7 @@ import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { X, UploadCloud } from "lucide-react";
 import clsx from "clsx";
+import Image from "next/image";
 
 export default function FileUploader() {
   const [files, setFiles] = useState([]);
@@ -41,13 +42,13 @@ export default function FileUploader() {
         )}
       >
         <input {...getInputProps()} />
-        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.5 12L12.5 8M12.5 8L8.5 12M12.5 8V17.2C12.5 18.5907 12.5 19.2861 13.0505 20.0646C13.4163 20.5819 14.4694 21.2203 15.0972 21.3054C16.0421 21.4334 16.4009 21.2462 17.1186 20.8719C20.3167 19.2036 22.5 15.8568 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 15.7014 4.51099 18.9331 7.5 20.6622" stroke="#355E5B" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round"/> </svg>
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.5 12L12.5 8M12.5 8L8.5 12M12.5 8V17.2C12.5 18.5907 12.5 19.2861 13.0505 20.0646C13.4163 20.5819 14.4694 21.2203 15.0972 21.3054C16.0421 21.4334 16.4009 21.2462 17.1186 20.8719C20.3167 19.2036 22.5 15.8568 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 15.7014 4.51099 18.9331 7.5 20.6622" stroke="#355E5B" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round" /> </svg>
         {isDragActive ? (
           <p className="text-[#144a6c] font-medium text-sm">Drop files here...</p>
         ) : (
           <>
             <p className="text-[#355E5BCC] text-sm font-normal mt-2 ">
-            Drag & drop or click to upload files here.
+              Drag & drop or click to upload files here.
             </p>
             {/* <p className="text-xs text-gray-400 mt-1">
               Supports PDF, JPG, JPEG, PNG
@@ -65,9 +66,16 @@ export default function FileUploader() {
               className="relative flex flex-col border rounded-lg p-3 shadow-sm bg-white"
             >
               {file.type.startsWith("image/") ? (
-                <img
+                // <img
+                //   src={file.preview}
+                //   alt={file.name}
+                //   className="w-full h-40 object-cover rounded-md mb-2"
+                // />
+                <Image
                   src={file.preview}
                   alt={file.name}
+                  width={100}
+                  height={40}
                   className="w-full h-40 object-cover rounded-md mb-2"
                 />
               ) : (

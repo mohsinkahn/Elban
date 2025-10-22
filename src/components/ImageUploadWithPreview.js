@@ -1,4 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react';
+import Image from 'next/image';
 
 const ImageUploadWithPreview = () => {
   const [images, setImages] = useState([]);
@@ -67,9 +68,16 @@ const ImageUploadWithPreview = () => {
         <div className="flex flex-wrap gap-4 mt-2 justify-center">
           {images.map((img, index) => (
             <div key={index} className="relative w-24 h-24 border rounded overflow-hidden shadow-sm">
-              <img
+              {/* <img
                 src={img.preview}
                 alt={`preview-${index}`}
+                className="object-cover w-full h-full"
+              /> */}
+              <Image
+                src={img.preview}
+                alt={`preview-${index}`}
+                width={100}
+                height={100}
                 className="object-cover w-full h-full"
               />
               <button

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import ImageUploadWithPreview from './ImageUploadWithPreview';
 import { Trash, Plus, Minus, X } from "lucide-react";
-
+ import Image from "next/image";
 
 const AddNewOrderModal = ({ isOpen, onClose }) => {
 
@@ -613,10 +613,18 @@ const AddNewOrderModal = ({ isOpen, onClose }) => {
                                                                     >
                                                                         <X size={18} />
                                                                     </button>
-                                                                    <img
+                                                                    {/* <img
                                                                         src={item.image}
                                                                         alt={item.name}
                                                                         className="w-12 h-12 object-contain"
+                                                                    /> */}
+                                                                    <Image
+                                                                        src={item.image}
+                                                                        alt={item.name}
+                                                                        width={12}
+                                                                        height={12}
+                                                                        className="w-12 h-12 object-contain"
+                                                                    
                                                                     />
                                                                     <span className="text-gray-700">{item.name}</span>
                                                                 </td>
