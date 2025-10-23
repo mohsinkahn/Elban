@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
-
+import Image from "next/image";
 export default function PotentialSupProduct() {
 
 
@@ -79,9 +79,16 @@ export default function PotentialSupProduct() {
                             <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.industry}</td>
                            
                             <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">
-                                <img
+                                {/* <img
                                     src={s.img || "/cap.png"}
                                     className="w-10 h-10 object-cover rounded"
+                                /> */}
+                                <Image
+                                src={s.img || "/cap.png"}
+                                alt="product image"
+                                 width={10}
+                                 height={10}
+                                 className="w-10 h-10 object-cover rounded"
                                 />
                             </td>
                             <td className="px-6 py-3 text-[#202E2D99] text-[13px] font-[400]">{s.contact_person}</td>

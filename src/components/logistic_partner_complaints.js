@@ -3,7 +3,8 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Edit, Trash2, Plus, FileText } from "lucide-react";
 
-export default function logisticPartnerComplaints() {
+export default function LogisticPartnerComplaints() {
+
   const [openIndex, setOpenIndex] = useState(null);
   const [menuIndex, setMenuIndex] = useState(null);
   const menuRefs = useRef([]);
