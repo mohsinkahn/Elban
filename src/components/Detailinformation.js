@@ -3,7 +3,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import MultiSelectTags from "./MultiSelectTags";
 import PaymentTermsSelectTag from "./PaymentTermsSelectTag";
 
-export default function Detailinformation() {
+export default function DetailInformation() {
     return (
         <form className="space-y-8">
             {/* Company Information */}

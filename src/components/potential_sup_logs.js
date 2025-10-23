@@ -130,7 +130,7 @@ const logs = [
   },
 ];
 
-export default function  potential_sup_logs() {
+export default function  PotentialSupLogs() {
   return (
     <>
       <h2 className="text-lg font-medium text-gray-900">Supplier Logs</h2>

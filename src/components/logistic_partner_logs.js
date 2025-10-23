@@ -130,7 +130,7 @@ const logs = [
   },
 ];
 
-export default function  logistic_partnerLogs() {
+export default function  LogisticPartnerLogs() {
   return (
     <>
       <h2 className="text-lg font-medium text-gray-900">Supplier Logs</h2>

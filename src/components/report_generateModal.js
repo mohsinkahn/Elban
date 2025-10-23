@@ -5,7 +5,7 @@ import MultiSelectTags from "../components/MultiSelectTags";
 import PaymentTermsSelectTag from "../components/PaymentTermsSelectTag";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import FileUploader from './FileUploader';
-const Report_generete_modal = ({ isOpen, onClose }) => {
+const ReportGenerateModal = ({ isOpen, onClose }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission here
@@ -148,4 +148,4 @@ const Report_generete_modal = ({ isOpen, onClose }) => {
     );
 };
 
-export default Report_generete_modal;
+export default ReportGenerateModal;

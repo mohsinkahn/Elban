@@ -12,7 +12,7 @@ import Supplier_attachments from './potential_client_attachment';
 // import Supplier_financial from './supplier_financial';
 import Supplier_notes_summary from './potential_client_note_summary';
 
-import AddNewProductModal from "./AddNewProductModal";
+// import AddNewProductModal from "./AddNewProductModal";
 const tabList = [
     { id: 1, label: "Detail Information" },
     { id: 2, label: "Quotes" },
@@ -96,7 +96,7 @@ export default function Tabs() {
                         </div>
                 
                 }
-                {activeTab === 4 &&
+                {/* {activeTab === 4 &&
                     <>
                         <div>
                             <div className="flex w-full justify-between items-center mb-2">
@@ -111,8 +111,8 @@ export default function Tabs() {
                         </div>
                     </>
 
-                }
-                {activeTab === 5 &&
+                } */}
+                {/* {activeTab === 5 &&
                     <>
                         <div>
                             <div className="flex w-full justify-between items-center mb-2">
@@ -152,7 +152,7 @@ export default function Tabs() {
                             <Product />
                         </div>
                     </>
-                }
+                } */}
                 {activeTab === 6 &&
 
                     <>
@@ -170,7 +170,7 @@ export default function Tabs() {
                     </>
 
                 }
-                {activeTab === 7 &&
+                {/* {activeTab === 7 &&
                     <>
                         <div>
                             <div className="flex w-full justify-between items-center mb-2">
@@ -185,13 +185,13 @@ export default function Tabs() {
                         </div>
                     </>
 
-                }
+                } */}
                 {activeTab === 8 &&
                     <>
                         <SupplierLogs />
                     </>
                 }
-                {activeTab === 9 &&
+                {/* {activeTab === 9 &&
 
                     <>
                         <div>
@@ -206,7 +206,7 @@ export default function Tabs() {
                             <Supplier_complaints />
                         </div>
                     </>
-                }
+                } */}
                 {activeTab === 10 &&
                     <>
 

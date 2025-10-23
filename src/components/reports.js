@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function reports({ activeTab, setActiveTab }) {
+export default function Reports({ activeTab, setActiveTab }) {
     //   const [activeTab, setActiveTab] = useState("potential");
 
     const suppliers = Array(20).fill({

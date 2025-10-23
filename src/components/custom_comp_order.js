@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function custom_comp_order() {
+export default function CustomCompOrder() {
 
 
     const suppliers = Array(20).fill({

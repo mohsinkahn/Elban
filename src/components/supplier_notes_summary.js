@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { time } from "framer-motion";
 
 
-export default function Supplier_notes_summary() {
+export default function SupplierNotesSummary() {
 
     const data = [
         {

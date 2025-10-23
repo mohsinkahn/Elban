@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function potential_sup_report() {
+export default function PotentialSupReport() {
 
 
     const suppliers = Array(20).fill({

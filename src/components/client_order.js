@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function client_order() {
+export default function Client_order() {
 
 
     const suppliers = Array(20).fill({

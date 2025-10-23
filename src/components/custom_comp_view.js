@@ -10,7 +10,7 @@ const statuses = [
     { label: "Blocked", value: "Blocked", bgColor: "bg-red-100", textColor: "text-red-700" },
 ];
 
-export default function customcompViewComponent({ supplierId }) {
+export default function CustomCompViewComponent({ supplierId }) {
     const [status, setStatus] = useState(statuses[0]);
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);

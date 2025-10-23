@@ -130,7 +130,7 @@ const logs = [
   },
 ];
 
-export default function  service_providerLogs() {
+export default function  ServiceProviderLogs() {
   return (
     <>
       <h2 className="text-lg font-medium text-gray-900">Supplier Logs</h2>

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import SupplierViewComponent from "../components/custom_comp_view";
 
-export default function custom_compViewPage() {
+export default function CustomCompViewPage() {
   const router = useRouter();
   const { id } = router.query;
   const [supplierId, setSupplierId] = useState(null);

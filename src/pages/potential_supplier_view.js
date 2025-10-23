@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import SupplierViewComponent from "../components/potential_sup_view";
 
-export default function potential_supplierViewPage() {
+export default function PotentialSupplierViewPage() {
   const router = useRouter();
   const { id } = router.query;
   const [supplierId, setSupplierId] = useState(null);

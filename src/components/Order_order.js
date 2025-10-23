@@ -2,9 +2,10 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 import { Trash, Plus, Minus, X } from "lucide-react";
+import Image from "next/image";
 
 
-export default function Order_order() {
+export default function OrderOrder() {
 
 
 const [products, setProducts] = useState([
@@ -116,10 +117,17 @@ const [products, setProducts] = useState([
                                     >
                                         <X size={18} />
                                     </button>
-                                    <img
+                                    {/* <img
                                         src={item.image}
                                         alt={item.name}
                                         className="w-12 h-12 object-contain"
+                                    /> */}
+                                    <Image
+                                    src={item.image}
+                                    alt={item.name}
+                                    width={12}
+                                    height={12}
+                                    className="object-contain"
                                     />
                                     <span className="text-gray-700">{item.name}</span>
                                 </td>

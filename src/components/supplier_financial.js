@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function supplier_financial() {
+export default function SupplierFinancial() {
 
 
     const suppliers = Array(20).fill({

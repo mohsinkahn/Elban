@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function supplier_event() {
+export default function SupplierEvent() {
 
 
     const suppliers = Array(20).fill({

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import SupplierViewComponent from "../components/logistic_partner_view";
 
-export default function logisticpartnerViewPage() {
+export default function LogisticPartnerViewPage() {
   const router = useRouter();
   const { id } = router.query;
   const [supplierId, setSupplierId] = useState(null);

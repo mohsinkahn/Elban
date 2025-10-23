@@ -208,7 +208,7 @@ export default function Tabs() {
                         </div>
                     </>
                 }
-                {activeTab === 10 &&
+                {/* {activeTab === 10 &&
                     <>
 
 
@@ -219,8 +219,8 @@ export default function Tabs() {
                     </>
 
 
-                }
-                {activeTab === 11 &&
+                } */}
+                {/* {activeTab === 11 &&
                     <>
                         <div>
                             <div className="flex w-full justify-between items-center mb-2">
@@ -234,7 +234,7 @@ export default function Tabs() {
                             <Supplier_report />
                         </div>
                     </>
-                }
+                } */}
             </div>
         </div>
     );

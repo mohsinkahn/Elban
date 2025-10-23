@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function supplier_order() {
+export default function SupplierOrder() {
 
 
     const suppliers = Array(20).fill({

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function supplier_quotes() {
+export default function SupplierQuotes() {
 
 
     const suppliers = Array(20).fill({

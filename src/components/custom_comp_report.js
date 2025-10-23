@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function custom_comp_report() {
+export default function CustomCompReport() {
 
 
     const suppliers = Array(20).fill({

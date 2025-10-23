@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import SupplierViewComponent from "../components/service_provider_view";
 
-export default function serviceproviderViewPage() {
+export default function ServiceProviderViewPage() {
   const router = useRouter();
   const { id } = router.query;
   const [supplierId, setSupplierId] = useState(null);

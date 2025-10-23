@@ -130,7 +130,7 @@ const logs = [
   },
 ];
 
-export default function  product_logs() {
+export default function  ProductLogs() {
   return (
     <>
       <h2 className="text-lg font-medium text-gray-900">Client Logs</h2>

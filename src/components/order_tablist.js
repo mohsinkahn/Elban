@@ -1,7 +1,7 @@
 // components/Tabs.js
 import { useState } from 'react';
-import Detailinformation from './potential_client_detail_info';
-import SupplierLogs from './product_logs';
+// import Detailinformation from './potential_client_detail_info';
+// import SupplierLogs from './product_logs';
 // import Product from './potential_sup_product';
 // import Supplier_quotes from './potential_client_quotes';
 // import Supplier_event from './potential_client_events';
@@ -77,7 +77,7 @@ export default function Tabs() {
                         </div>
                     </>
                 }
-                {activeTab === 2 &&
+                {/* {activeTab === 2 &&
                     <>
                         <div>
                             <div className="flex w-full justify-between items-center mb-2">
@@ -91,8 +91,8 @@ export default function Tabs() {
                             <Supplier_quotes />
                         </div>
                     </>
-                }
-                {activeTab === 3 && 
+                } */}
+                {/* {activeTab === 3 && 
                 <div>
                             <div className="flex w-full justify-between items-center mb-2">
                                 <div className="product">
@@ -105,7 +105,7 @@ export default function Tabs() {
                             <Supplier_notes_summary />
                         </div>
                 
-                }
+                } */}
                 {/* {activeTab === 4 &&
                     <>
                         <div>
@@ -122,7 +122,7 @@ export default function Tabs() {
                     </>
 
                 } */}
-                {activeTab === 5 &&
+                {/* {activeTab === 5 &&
                     <>
                         <div>
                             <div className="flex w-full justify-between items-center mb-2">
@@ -162,8 +162,8 @@ export default function Tabs() {
                             <Product />
                         </div>
                     </>
-                }
-                {activeTab === 6 &&
+                } */}
+                {/* {activeTab === 6 &&
 
                     <>
                         <div>
@@ -179,8 +179,8 @@ export default function Tabs() {
                         </div>
                     </>
 
-                }
-                {activeTab === 7 &&
+                } */}
+                {/* {activeTab === 7 &&
                     <>
                         <div>
                             <div className="flex w-full justify-between items-center mb-2">
@@ -195,12 +195,12 @@ export default function Tabs() {
                         </div>
                     </>
 
-                }
-                {activeTab === 8 &&
+                } */}
+                {/* {activeTab === 8 &&
                     <>
                         <SupplierLogs />
                     </>
-                }
+                } */}
                 {activeTab === 9 &&
 
                     <>
@@ -218,7 +218,7 @@ export default function Tabs() {
                         </div>
                     </>
                 }
-                {activeTab === 10 &&
+                {/* {activeTab === 10 &&
                     <>
 
 
@@ -229,8 +229,8 @@ export default function Tabs() {
                     </>
 
 
-                }
-                {activeTab === 11 &&
+                } */}
+                {/* {activeTab === 11 &&
                     <>
                         <div>
                             <div className="flex w-full justify-between items-center mb-2">
@@ -244,7 +244,7 @@ export default function Tabs() {
                             <Supplier_report />
                         </div>
                     </>
-                }
+                } */}
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { time } from "framer-motion";
 
 
-export default function custom_comp_notes_summary() {
+export default function CustomCompNotesSummary() {
 
     const data = [
         {

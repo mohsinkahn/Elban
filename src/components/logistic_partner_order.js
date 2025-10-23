@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function logistic_partner_order() {
+export default function LogisticPartnerOrder() {
 
 
     const suppliers = Array(20).fill({

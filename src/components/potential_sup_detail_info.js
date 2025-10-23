@@ -5,7 +5,7 @@ import PaymentTermsSelectTag from "./PaymentTermsSelectTag";
 import FileUploader from './FileUploader';
 
 
-export default function Detailinformation() {
+export default function DetailInformation() {
     return (
         <form className="space-y-8">
             {/* Company Information */}

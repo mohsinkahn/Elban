@@ -58,20 +58,35 @@ export default function ProductViewComponent({ ProductId }) {
       <div className="flex gap-4">
         {/* Left - Product Images */}
         <div className="w-1/4 border border-[#E5E7EB] rounded-md p-3 flex flex-col items-center">
-          <img
+          {/* <img
             src={product.images[0]}
             alt="Product"
             className="w-50 h-24 object-contain mb-3"
+          /> */}
+          <Image
+          src={product.images[0]}
+          alt="Product"
+          width={50}
+          height={24}
+          className="w-50 h-24 object-contain mb-3"
           />
           <div className="flex items-center gap-2">
             <button className="text-gray-400 hover:text-[#355E5B]">&lt;</button>
             {product.images.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt="thumb"
-                className="w-10 h-10 object-contain border border-[#E5E7EB] rounded-md"
-              />
+              // <img
+              //   key={index}
+              //   src={img}
+              //   alt="thumb"
+              //   className="w-10 h-10 object-contain border border-[#E5E7EB] rounded-md"
+              // />
+               <Image
+          key={index}
+          src={img}
+          alt="thumb"
+          width={10}
+          height={10}
+          className="w-10 h-10 object-contain border border-[#E5E7EB] rounded-md"
+          />
             ))}
             <button className="text-gray-400 hover:text-[#355E5B]">&gt;</button>
           </div>

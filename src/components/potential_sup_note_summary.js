@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { time } from "framer-motion";
 
 
-export default function potential_sup_notes_summary() {
+export default function PotentialSupNotesSummary() {
 
     const data = [
         {

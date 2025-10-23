@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ActionsMenu from "@/components/ActionsMenu";
 
-export default function service_provider_report() {
+export default function ServiceProviderReport() {
 
 
     const suppliers = Array(20).fill({
