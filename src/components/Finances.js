@@ -69,7 +69,7 @@ export default function Finances({ activeTab, setActiveTab }) {
   return (
     <div className="p-4">
       {/* Tabs */}
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 overflow-x-scroll">
         <button
           onClick={() => setActiveTab("potential")}
           className={`px-4 py-2 text-sm font-medium rounded-t-lg ${activeTab === "potential"
@@ -120,7 +120,7 @@ export default function Finances({ activeTab, setActiveTab }) {
 
       {/* Table (shown only on "Potential Suppliers" tab) */}
       {activeTab === "potential" && (
-        <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+        <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-473px)] border border-gray-200">
           <table className="min-w-full text-sm text-left">
             <thead className="bg-[#F4F4F4] text-[#333333] capitalize text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
               <tr>
@@ -289,7 +289,7 @@ export default function Finances({ activeTab, setActiveTab }) {
 
       {/* Placeholder for other tabs */}
       {activeTab === "active" && (
-        <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+        <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-473px)] border border-gray-200">
           <table className="min-w-full text-sm text-left">
             <thead className="bg-[#F4F4F4] text-[#333333] capitalize text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
               <tr>
@@ -378,7 +378,7 @@ export default function Finances({ activeTab, setActiveTab }) {
         </div>
       )}
       {activeTab === "active2" && (
-        <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+        <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-473px)] border border-gray-200">
           <table className="min-w-full text-sm text-left">
             <thead className="bg-[#F4F4F4] text-[#333333] capitalize text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
               <tr>
@@ -467,7 +467,7 @@ export default function Finances({ activeTab, setActiveTab }) {
         </div>
       )}
       {activeTab === "active3" && (
-        <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+        <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-473px)] border border-gray-200">
           <table className="min-w-full text-sm text-left">
             <thead className="bg-[#F4F4F4] text-[#333333] capitalize text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
               <tr>
@@ -556,7 +556,7 @@ export default function Finances({ activeTab, setActiveTab }) {
         </div>
       )}
       {activeTab === "active4" && (
-        <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+        <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-473px)] border border-gray-200">
           <table className="min-w-full text-sm text-left">
             <thead className="bg-[#F4F4F4] text-[#333333] capitalize text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
               <tr>

@@ -323,7 +323,7 @@ const BarChart = ({ categories, series }) => {
       </div>
 
       {/* Bar Chart Area */}
-      <div className="h-[250px] relative">
+      <div className="h-[250px] relative overflow-x-scroll">
         {/* Y-Axis Labels (Simplified) */}
         {['1K', '2K', '3K', '4K', '5K'].map((label, i) => (
           <div key={i} className="absolute left-0 text-xs text-gray-400" style={{ bottom: `${(i + 1) * 20}%` }}>{label}</div>
@@ -548,10 +548,10 @@ export default function App() {
           <h1 className="text-2xl font-semibold mb-2">Dashboard</h1>
           <p className="text-sm text-gray-500 mb-6 border-b border-gray-200 pb-3">A real-time snapshot of suppliers, orders, finances, and performance.</p>
 
-          <div className="overflow-auto max-h-[calc(100vh-260px)] pb-4">
+          <div className="overflow-y-scroll max-h-[calc(100vh-260px)] pb-4">
 
             {/* Top KPI row (6 items, using lg:grid-cols-6 for compact desktop view) */}
-            <div className="flex justify-between gap-4 mb-6 ">
+            <div className="lg:flex lg:justify-between grid grid-cols-1 gap-4 mb-6 ">
               {/* Donut Cards */}
               <div className="lg:col-span-2 flex-1 leg">
                 <div className="grid grid-cols-1 md:grid-cols-[420px_420px] gap-4">

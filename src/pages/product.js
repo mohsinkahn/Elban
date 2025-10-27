@@ -37,7 +37,7 @@ export default function ProductPage() {
         </div>
       ) : (
         <div>
-          <div className="flex justify-between md:items-center items-baseline md:flex-row flex-col">
+          <div className="lg:flex lg:justify-between lg:items-center items-baseline lg:flex-row grid grid-cols-1">
             <div>
               <h1 className="text-2xl font-[500] text-[#101828]">Products</h1>
               <p className="text-[#202E2D] font-[100] text-[14px] m-0">
@@ -95,7 +95,7 @@ export default function ProductPage() {
               />
             </div>
           </div>
-          <hr className="mt-[20px] mb-[30px] text-[#EAECF0]" />
+          <hr className="mt-[20px] lg:mb-[30px] text-[#EAECF0]" />
           <Product />
         </div>
       )}

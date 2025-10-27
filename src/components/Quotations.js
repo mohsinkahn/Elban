@@ -95,7 +95,7 @@ export default function Quotations({ activeTab, setActiveTab }) {
 
       {/* Table (shown only on "Potential Suppliers" tab) */}
       {activeTab === "potential" && (
-        <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+        <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] border border-gray-200">
           <table className="min-w-full text-sm text-left">
             <thead className="bg-[#F4F4F4] text-[#333333] capitalize text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
               <tr>

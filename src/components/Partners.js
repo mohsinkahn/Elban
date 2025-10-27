@@ -94,7 +94,7 @@ export default function Partners({ activeTab, setActiveTab }) {
             {activeTab === "potential" && (
                 <>
                    
-                    <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+                    <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] border border-gray-200">
                         <table className="min-w-full text-sm text-left">
                             <thead className="bg-[#F4F4F4] text-gray-600 uppercase text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
                                 <tr>
@@ -248,7 +248,7 @@ export default function Partners({ activeTab, setActiveTab }) {
 
             {/* Placeholder for other tabs */}
             {activeTab === "active" && (
-                <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+                <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] border border-gray-200">
                     <table className="min-w-full text-sm text-left">
                         <thead className="bg-[#F4F4F4] text-gray-600 uppercase text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
                             <tr>
@@ -397,7 +397,7 @@ export default function Partners({ activeTab, setActiveTab }) {
                 </div>
             )}
             {activeTab === "provider" && (
-                <div className="bg-white overflow-auto max-h-[calc(100vh-290px)] border border-gray-200">
+                <div className="bg-white overflow-auto lg:max-h-[calc(100vh-290px)] max-h-[calc(100vh-425px)] border border-gray-200">
                     <table className="min-w-full text-sm text-left">
                         <thead className="bg-[#F4F4F4] text-gray-600 uppercase text-xs sticky top-0 z-10 border border-[#EAECF0] whitespace-nowrap">
                             <tr>
